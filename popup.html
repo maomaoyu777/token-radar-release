@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Web3 Token Radar</title>
+  <style>
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 16px;
+      background: #111827;
+      color: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 15px;
+      color: #60a5fa;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      background: #1e3a8a;
+      color: #93c5fd;
+    }
+    .search-box {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    input {
+      flex: 1;
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: #f9fafb;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      outline: none;
+    }
+    input:focus {
+      border-color: #3b82f6;
+    }
+    button {
+      background: #2563eb;
+      border: none;
+      color: #fff;
+      padding: 0 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    .result-box {
+      display: none;
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+    .row:last-child {
+      margin-bottom: 0;
+    }
+    .label {
+      color: #9ca3af;
+    }
+    .val {
+      font-weight: 500;
+    }
+    .up { color: #10b981; }
+    .down { color: #ef4444; }
+    .status-box {
+      background: #182234;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .footer-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 11px;
+    }
+    .footer-links a {
+      flex: 1;
+      text-align: center;
+      padding: 7px 8px;
+      border-radius: 6px;
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: #93c5fd;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      border-color: #3b82f6;
+      color: #bfdbfe;
+    }
+    .footer-links a.support {
+      background: #1d4ed8;
+      border-color: #2563eb;
+      color: #fff;
+      font-weight: 600;
+    }
+    .footer-links a.support:hover { background: #2563eb; }
+
+    /* ---- 监控列表 ---- */
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #cbd5e1;
+      margin: 14px 0 8px;
+      font-weight: 600;
+    }
+    .section-title .count { color: #64748b; font-weight: 400; }
+    .watch-list { display: flex; flex-direction: column; gap: 6px; }
+    .watch-empty { font-size: 11px; color: #64748b; padding: 8px 2px; }
+    .watch-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 6px;
+      padding: 7px 9px;
+      font-size: 12px;
+    }
+    .watch-item .sym { font-weight: 600; color: #e5e7eb; max-width: 70px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .watch-item .addr { color: #6b7280; font-family: ui-monospace, Consolas, monospace; font-size: 11px; flex: 1; }
+    .watch-item .rm {
+      background: transparent; border: 0; color: #94a3b8; cursor: pointer;
+      font-size: 14px; line-height: 1; padding: 2px 4px;
+    }
+    .watch-item .rm:hover { color: #ef4444; }
+
+    /* ---- Pro 告警 ---- */
+    .pro-box { background: #182234; border: 1px solid #1e293b; border-radius: 8px; padding: 10px; }
+    .pro-box input {
+      width: 100%;
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: #f9fafb;
+      padding: 6px 9px;
+      border-radius: 6px;
+      font-size: 11px;
+      outline: none;
+      margin-bottom: 6px;
+      box-sizing: border-box;
+    }
+    .pro-box input:focus { border-color: #3b82f6; }
+    .pro-box button {
+      width: 100%;
+      background: #2563eb;
+      border: 0;
+      color: #fff;
+      padding: 7px 0;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .pro-box button:disabled { opacity: .6; cursor: default; }
+    .pro-note { font-size: 10px; color: #64748b; margin-top: 6px; line-height: 1.5; }
+    .pro-result { font-size: 11px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>⚡ Token Radar <span class="badge">v1.3.0</span></h2>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="caInput" data-i18n-placeholder="popupPlaceholder" placeholder="输入 EVM / Solana 合约地址..." />
+    <button id="searchBtn" data-i18n="popupSearch">查询</button>
+  </div>
+
+  <div id="resultBox" class="result-box">
+    <div id="resultContent"></div>
+  </div>
+
+  <div class="status-box">
+    <div>● <b data-i18n="popupStatusOn">X / Twitter 监听：已启用</b></div>
+    <div style="margin-top: 4px; font-size: 11px; color: #64748b;" data-i18n="popupStatusDesc">
+      打开 x.com 即生效，点推文里的合约直接弹出深度卡片。
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span data-i18n="watchListTitle">我的监控</span>
+    <span class="count" id="watchCount">0/20</span>
+  </div>
+  <div id="watchList" class="watch-list"></div>
+
+  <div class="section-title"><span data-i18n="proTitle">邮件告警（Pro）</span></div>
+  <div class="pro-box">
+    <input type="email" id="proEmail" data-i18n-placeholder="proEmailPlaceholder" placeholder="邮箱，用于接收告警" />
+    <input type="url" id="proEndpoint" data-i18n-placeholder="proEndpointPlaceholder" placeholder="Worker 地址，例：https://xxx.workers.dev" />
+    <button id="proEnable" data-i18n="proEnable">为监控列表开启邮件告警</button>
+    <div class="pro-note" data-i18n="proNote">
+      地址只发送给你自己部署的 Cloudflare Worker，不经过第三方服务器。免费版扩展不会上传任何数据。
+    </div>
+    <div class="pro-result" id="proResult"></div>
+  </div>
+
+  <div id="footerLinks" class="footer-links"></div>
+
+  <script src="watchlist.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+{
+  "extName": {
+    "message": "Web3 代币雷达 - X 链上合约扫描",
+    "description": "扩展名称"
+  },
+  "extDesc": {
+    "message": "在 X（推特）上自动识别 EVM/Solana 合约，直接看实时价格、池子深度与貔貅盘风险。不登录、不收集数据。",
+    "description": "商店简短描述"
+  },
+  "cardTitle": {
+    "message": "⚡ Token Radar"
+  },
+  "labelToken": {
+    "message": "代币资产"
+  },
+  "labelChain": {
+    "message": "网络 / DEX"
+  },
+  "labelPrice": {
+    "message": "当前币价"
+  },
+  "labelLiquidity": {
+    "message": "池子深度"
+  },
+  "labelFdv": {
+    "message": "FDV"
+  },
+  "labelVolume": {
+    "message": "24h 交易量"
+  },
+  "labelAge": {
+    "message": "池子年龄"
+  },
+  "labelRisk": {
+    "message": "安全风控"
+  },
+  "riskHoneypot": {
+    "message": "🚨 貔貅盘（无法卖出）"
+  },
+  "riskHoneypotDesc": {
+    "message": "检测到合约禁止卖出或存在黑名单逻辑"
+  },
+  "riskHighTax": {
+    "message": "⚠️ 高税收（卖出税 $1%）"
+  },
+  "riskHighTaxDesc": {
+    "message": "该代币设置了极高的卖出税"
+  },
+  "riskShallow": {
+    "message": "⚠️ 高风险（池子极浅）"
+  },
+  "riskShallowDesc": {
+    "message": "池子不足 $5,000，易被砸盘"
+  },
+  "riskMedium": {
+    "message": "⚡ 中风险（关注滑点）"
+  },
+  "riskMediumDesc": {
+    "message": "流动性或交易活跃度较低"
+  },
+  "riskNormal": {
+    "message": "✅ 正常"
+  },
+  "riskNormalTax": {
+    "message": "✅ 正常（税 买$1%/卖$2%）"
+  },
+  "riskNormalDesc": {
+    "message": "池子深度良好，未见明显阻碍卖出的逻辑"
+  },
+  "loading": {
+    "message": "正在拉取链上实时底池与安全检测…"
+  },
+  "noPool": {
+    "message": "未检测到 DEX 活跃底池"
+  },
+  "loadError": {
+    "message": "加载失败，请稍后再试"
+  },
+  "linkDex": {
+    "message": "DexScreener 深度图"
+  },
+  "tipClose": {
+    "message": "关闭"
+  },
+  "tipEvm": {
+    "message": "[EVM] 点击查看代币雷达与貔貅安全数据"
+  },
+  "tipSol": {
+    "message": "[Solana] 点击查看代币雷达与安全数据"
+  },
+  "chainFallback": {
+    "message": "链"
+  },
+  "unitMinute": {
+    "message": "$1 分钟"
+  },
+  "unitHour": {
+    "message": "$1 小时"
+  },
+  "unitDay": {
+    "message": "$1 天"
+  },
+  "popupTitle": {
+    "message": "Token Radar"
+  },
+  "popupPlaceholder": {
+    "message": "输入 EVM / Solana 合约地址…"
+  },
+  "popupSearch": {
+    "message": "查询"
+  },
+  "popupStatusOn": {
+    "message": "X / Twitter 监听：已启用"
+  },
+  "popupStatusDesc": {
+    "message": "打开 x.com 即生效，点推文里的合约直接弹出深度卡片。"
+  },
+  "popupInvalid": {
+    "message": "地址格式不对：EVM 需 0x+40 位十六进制，Solana 需 32~44 位 base58"
+  },
+  "popupLoading": {
+    "message": "正在拉取数据…"
+  },
+  "popupNoPool": {
+    "message": "未检索到对应流动池"
+  },
+  "popupFail": {
+    "message": "查询失败：$1"
+  },
+  "popupAssets": {
+    "message": "资产"
+  },
+  "popupNetwork": {
+    "message": "网络 / DEX"
+  },
+  "popupPrice": {
+    "message": "价格"
+  },
+  "popupLiquidity": {
+    "message": "流动性"
+  },
+  "popupVolume": {
+    "message": "24h 交易量"
+  },
+  "popupFeedback": {
+    "message": "反馈 / 建议"
+  },
+  "popupSupport": {
+    "message": "支持开发"
+  },
+  "watchAdd": { "message": "＋ 监控" },
+  "watchAdded": { "message": "✓ 已监控" },
+  "watchFull": { "message": "最多 20 个" },
+  "watchFail": { "message": "保存失败" },
+  "watchListTitle": { "message": "我的监控" },
+  "watchEmpty": { "message": "还没有监控地址。在 X 上点开任意合约卡片，按「＋ 监控」加入。" },
+  "watchRemove": { "message": "移除" },
+  "proTitle": { "message": "邮件告警（Pro）" },
+  "proEmailPlaceholder": { "message": "邮箱，用于接收告警" },
+  "proEndpointPlaceholder": { "message": "Worker 地址，例：https://xxx.workers.dev" },
+  "proEnable": { "message": "为监控列表开启邮件告警" },
+  "proNote": { "message": "地址只发送给你自己部署的 Cloudflare Worker，不经过第三方服务器。免费版扩展不会上传任何数据。" },
+  "proBadEmail": { "message": "邮箱格式不对" },
+  "proBadEndpoint": { "message": "Worker 地址需以 https:// 开头" },
+  "proEmpty": { "message": "监控列表是空的，先在卡片上添加地址" },
+  "proWorking": { "message": "正在提交…" },
+  "proOk": { "message": "已开启告警" },
+  "proFail": { "message": "提交失败：$1" },
+  "popupOpenDex": {
+    "message": "进入 DexScreener 查看 →"
+  }
+}

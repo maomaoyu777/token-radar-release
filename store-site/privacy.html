@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — Web3 Token Radar</title>
+<meta name="description" content="Privacy policy for the Web3 Token Radar Chrome extension: no account, no analytics, no server. Only two public read-only APIs are contacted." />
+<meta name="robots" content="index,follow" />
+<link rel="icon" href="img/icon128.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./"><img src="img/icon128.png" alt="" /> Token <span>Radar</span></a>
+    <nav class="links">
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <a href="#policy" data-i18n="navPrivacy">Privacy</a>
+      <button class="lang-btn" id="langBtn" type="button">中文</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap policy" id="policy">
+  <h2 data-i18n="title">Privacy Policy</h2>
+  <p class="meta" data-i18n="meta">Web3 Token Radar · Last updated 2026-11-27 · Version 1.3.0</p>
+
+  <div class="callout">
+    <strong data-i18n="calloutStrong">Short version:</strong>
+    <span data-i18n="calloutBody">no account, no analytics, no telemetry, no server of our own. The only network requests are read-only calls to two public APIs, and they carry nothing but the token address you chose to look up.</span>
+  </div>
+
+  <h3 data-i18n="h1">What the extension does with data</h3>
+  <table>
+    <thead>
+      <tr>
+        <th data-i18n="thData">Data</th>
+        <th data-i18n="thWhere">Where it goes</th>
+        <th data-i18n="thWhy">Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-i18n="row1c1">Text of the X page you are viewing</td>
+        <td data-i18n="row1c2">Stays in your browser</td>
+        <td data-i18n="row1c3">Read locally to find <code>0x…</code> and Solana addresses so they can be highlighted. Never transmitted or stored.</td>
+      </tr>
+      <tr>
+        <td data-i18n="row2c1">Token address you click or type</td>
+        <td data-i18n="row2c2">Sent to <code>api.dexscreener.com</code> and <code>api.honeypot.is</code></td>
+        <td data-i18n="row2c3">To return price, liquidity, volume and contract-risk data.</td>
+      </tr>
+      <tr>
+        <td data-i18n="row3c1">Your IP address</td>
+        <td data-i18n="row3c2">Implicitly visible to those two APIs</td>
+        <td data-i18n="row3c3">Standard HTTP behaviour, outside our control.</td>
+      </tr>
+      <tr>
+        <td data-i18n="row4c1">Card data (price, liquidity…)</td>
+        <td data-i18n="row4c2">In memory for 30 seconds</td>
+        <td data-i18n="row4c3">To avoid duplicate requests when you re-open the same card. Cleared when the tab closes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p data-i18n="noStorage">The extension writes to <code>chrome.storage.local</code> for one thing only: the watchlist you build yourself (≤20 addresses). Nothing else is stored, and nothing is ever synced or uploaded. It does not read other tabs, your history, your bookmarks or your clipboard. It cannot see or touch your wallet — it never asks for a wallet connection and contains no blockchain-writing code.</p>
+
+  <h3 data-i18n="h2">Third-party services</h3>
+  <p data-i18n="thirdParty">Two public, read-only APIs are contacted. Their own privacy policies apply to those requests:</p>
+  <ul>
+    <li><strong>DexScreener</strong> — <a href="https://dexscreener.com" rel="noopener">dexscreener.com</a> (market data)</li>
+    <li><strong>Honeypot.is</strong> — <a href="https://honeypot.is" rel="noopener">honeypot.is</a> (contract simulation for EVM chains)</li>
+  </ul>
+  <p data-i18n="noBackend">No data is sent to the developer. There is no backend server.</p>
+
+  <h3 data-i18n="h3">Permissions, and why each one exists</h3>
+  <table>
+    <thead>
+      <tr>
+        <th data-i18n="thPerm">Permission</th>
+        <th data-i18n="thReason">Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-i18n="p1c1">Content script on <code>x.com</code> and <code>twitter.com</code></td>
+        <td data-i18n="p1c2">To read post text on X in order to detect contract addresses.</td>
+      </tr>
+      <tr>
+        <td data-i18n="p2c1">Host access to <code>api.dexscreener.com</code></td>
+        <td data-i18n="p2c2">To fetch public DEX pair data for the address you clicked.</td>
+      </tr>
+      <tr>
+        <td data-i18n="p3c1">Host access to <code>api.honeypot.is</code></td>
+        <td data-i18n="p3c2">To run a public contract simulation (buy/sell tax, honeypot status).</td>
+      </tr>
+      <tr>
+        <td data-i18n="p4c1"><code>storage</code></td>
+        <td data-i18n="p4c2">To save the watchlist you build by clicking “Watch” on a card (up to 20 addresses). Stored locally only, never synced or uploaded, deleted when the extension is uninstalled.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p data-i18n="noPerms">The extension requests no other Chrome permissions — no <code>tabs</code>, <code>cookies</code>, <code>history</code>, <code>&lt;all_urls&gt;</code> or <code>activeTab</code>.</p>
+
+  <h3 data-i18n="h4">Remote code</h3>
+  <p data-i18n="remoteCode">All JavaScript ships inside the extension package. The extension does not load, evaluate or inject remote code, and does not use <code>eval</code> or <code>new Function</code>.</p>
+
+  <h3 data-i18n="h5">Children</h3>
+  <p data-i18n="children">The extension is not directed at children and collects no data from anyone.</p>
+
+  <h3 data-i18n="h6">Data deletion</h3>
+  <p data-i18n="deletion">Because no personal data is collected or stored by the developer, there is nothing to delete. To remove all local traces, uninstall the extension; its in-memory cache disappears with the tab.</p>
+
+  <h3 data-i18n="h7">Changes</h3>
+  <p data-i18n="changes">Material changes to this policy will be published at this URL together with a new version number in the extension's manifest.</p>
+
+  <h3 data-i18n="h8">Contact</h3>
+  <p data-i18n="contact">Questions about this policy: <a href="mailto:cantermattera@gmail.com">cantermattera@gmail.com</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="footer">Web3 Token Radar is not financial advice.</span>
+    <span style="margin-left:auto"><a href="index.html" data-i18n="navHome">Home</a></span>
+  </div>
+</footer>
+
+<script>
+  const ZH = {
+    navHome: '首页',
+    navPrivacy: '隐私政策',
+    title: '隐私政策',
+    meta: 'Web3 Token Radar · 最后更新 2026-11-27 · 版本 1.3.0',
+    calloutStrong: '一句话版本：',
+    calloutBody: '无账号、无统计埋点、无自建服务器。唯一的网络请求是两个公开只读接口，请求内容只有你主动查询的那个代币地址。',
+
+    h1: '本扩展如何处理数据',
+    thData: '数据', thWhere: '去向', thWhy: '用途',
+    row1c1: '你正在浏览的 X 页面文本', row1c2: '只留在本地浏览器', row1c3: '在本地检索 <code>0x…</code> 与 Solana 地址用于高亮，不上传、不存储。',
+    row2c1: '你点击或输入的代币地址', row2c2: '发送至 <code>api.dexscreener.com</code>、<code>api.honeypot.is</code>', row2c3: '换取价格、流动性、交易量与合约风险数据。',
+    row3c1: '你的 IP 地址', row3c2: '上述两个接口按 HTTP 常规可见', row3c3: '网络请求的固有属性，非我方控制。',
+    row4c1: '卡片数据（价格、流动性等）', row4c2: '内存保留 30 秒', row4c3: '避免重复打开同一张卡片时重复请求，关标签页即清空。',
+    noStorage: '本扩展只用 <code>chrome.storage.local</code> 存一样东西：你自己点的监控列表（≤20 个地址）；不读取其他标签页、历史记录、书签或剪贴板；不连接、不读取你的钱包，也不包含任何写链代码。',
+
+    h2: '第三方服务',
+    thirdParty: '仅访问两个公开只读接口，相关请求适用它们各自的隐私政策：',
+    noBackend: '数据不会发送给开发者，不存在后端服务器。',
+
+    h3: '权限说明',
+    thPerm: '权限', thReason: '用途',
+    p1c1: '<code>x.com</code> / <code>twitter.com</code> 的内容脚本', p1c2: '读取推文文本以识别合约地址。',
+    p2c1: '访问 <code>api.dexscreener.com</code>', p2c2: '查询你点击地址的公开交易对数据。',
+    p3c1: '访问 <code>api.honeypot.is</code>', p3c2: '做公开合约模拟（买卖税、貔貅检测）。',
+    p4c1: '<code>storage</code>',
+    p4c2: '用于保存你点「监控」加入的地址（最多 20 个）。只存本地，不同步、不上传，卸载即删除。',
+    noPerms: '除此之外不申请任何 Chrome 权限——无 <code>tabs</code>、<code>cookies</code>、<code>history</code>、<code>&lt;all_urls&gt;</code>、<code>activeTab</code>。',
+
+    h4: '远程代码',
+    remoteCode: '全部脚本随扩展打包，不加载、不执行、不注入远程代码，不使用 <code>eval</code> 与 <code>new Function</code>。',
+
+    h5: '儿童',
+    children: '本扩展不面向儿童，也不从任何人处收集数据。',
+
+    h6: '数据删除',
+    deletion: '开发者不收集数据，故无数据可删。卸载扩展即可清除全部本地痕迹。',
+
+    h7: '政策变更',
+    changes: '政策如有实质变更，将在本页面发布，并在扩展 manifest 中同步新版本号。',
+
+    h8: '联系方式',
+    contact: '如有疑问请联系：<a href="mailto:cantermattera@gmail.com">cantermattera@gmail.com</a>。',
+
+    footer: 'Web3 Token Radar 不构成投资建议。',
+  };
+  const EN = {};
+  document.querySelectorAll('[data-i18n]').forEach((el) => { EN[el.dataset.i18n] = el.innerHTML; });
+
+  function apply(lang) {
+    const map = lang === 'zh' ? ZH : EN;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.dataset.i18n;
+      if (map[key]) el.innerHTML = map[key];
+    });
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('langBtn').textContent = lang === 'zh' ? 'English' : '中文';
+    try { localStorage.setItem('w3r-lang', lang); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('w3r-lang'); } catch (e) {}
+  const qs = new URLSearchParams(location.search).get('lang');
+  const initial = qs || saved || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+  if (initial === 'zh') apply('zh');
+
+  document.getElementById('langBtn').addEventListener('click', () => {
+    apply(document.documentElement.lang === 'zh-CN' ? 'en' : 'zh');
+  });
+</script>
+</body>
+</html>

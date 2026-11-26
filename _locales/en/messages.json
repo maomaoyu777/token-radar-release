@@ -1,0 +1,172 @@
+{
+  "extName": {
+    "message": "Web3 Token Radar - DEX & Honeypot Scanner",
+    "description": "Extension name shown in Chrome and the Web Store"
+  },
+  "extDesc": {
+    "message": "On X, spot any EVM/Solana contract at a glance: live DEX price, liquidity depth and honeypot risk. No login, no tracking.",
+    "description": "Store short description"
+  },
+  "cardTitle": {
+    "message": "⚡ Token Radar"
+  },
+  "labelToken": {
+    "message": "Token"
+  },
+  "labelChain": {
+    "message": "Chain / DEX"
+  },
+  "labelPrice": {
+    "message": "Price"
+  },
+  "labelLiquidity": {
+    "message": "Liquidity"
+  },
+  "labelFdv": {
+    "message": "FDV"
+  },
+  "labelVolume": {
+    "message": "24h volume"
+  },
+  "labelAge": {
+    "message": "Pool age"
+  },
+  "labelRisk": {
+    "message": "Risk check"
+  },
+  "riskHoneypot": {
+    "message": "🚨 Honeypot (cannot sell)"
+  },
+  "riskHoneypotDesc": {
+    "message": "Contract blocks selling or contains blacklist logic"
+  },
+  "riskHighTax": {
+    "message": "⚠️ High tax (sell $1%)"
+  },
+  "riskHighTaxDesc": {
+    "message": "This token has an extremely high sell tax"
+  },
+  "riskShallow": {
+    "message": "⚠️ High risk (thin pool)"
+  },
+  "riskShallowDesc": {
+    "message": "Pool below $5,000 — easy to dump on"
+  },
+  "riskMedium": {
+    "message": "⚡ Medium risk (watch slippage)"
+  },
+  "riskMediumDesc": {
+    "message": "Low liquidity or low trading activity"
+  },
+  "riskNormal": {
+    "message": "✅ Normal"
+  },
+  "riskNormalTax": {
+    "message": "✅ Normal (buy $1% / sell $2%)"
+  },
+  "riskNormalDesc": {
+    "message": "Healthy pool depth, no obvious sell blocking"
+  },
+  "loading": {
+    "message": "Fetching on-chain pool and safety check…"
+  },
+  "noPool": {
+    "message": "No active DEX pool found"
+  },
+  "loadError": {
+    "message": "Failed to load, please try again"
+  },
+  "linkDex": {
+    "message": "Open DexScreener"
+  },
+  "tipClose": {
+    "message": "Close"
+  },
+  "tipEvm": {
+    "message": "[EVM] Click to view token radar and honeypot risk"
+  },
+  "tipSol": {
+    "message": "[Solana] Click to view token radar and safety data"
+  },
+  "chainFallback": {
+    "message": "chain"
+  },
+  "unitMinute": {
+    "message": "$1 min"
+  },
+  "unitHour": {
+    "message": "$1 h"
+  },
+  "unitDay": {
+    "message": "$1 d"
+  },
+  "popupTitle": {
+    "message": "Token Radar"
+  },
+  "popupPlaceholder": {
+    "message": "Paste an EVM / Solana contract address…"
+  },
+  "popupSearch": {
+    "message": "Check"
+  },
+  "popupStatusOn": {
+    "message": "X / Twitter listening: enabled"
+  },
+  "popupStatusDesc": {
+    "message": "Works as soon as you open x.com — contracts in posts are highlighted, click to open the card."
+  },
+  "popupInvalid": {
+    "message": "Invalid address: EVM needs 0x + 40 hex chars, Solana needs 32–44 base58 chars"
+  },
+  "popupLoading": {
+    "message": "Fetching data…"
+  },
+  "popupNoPool": {
+    "message": "No active pool found for this address"
+  },
+  "popupFail": {
+    "message": "Request failed: $1"
+  },
+  "popupAssets": {
+    "message": "Token"
+  },
+  "popupNetwork": {
+    "message": "Chain / DEX"
+  },
+  "popupPrice": {
+    "message": "Price"
+  },
+  "popupLiquidity": {
+    "message": "Liquidity"
+  },
+  "popupVolume": {
+    "message": "24h volume"
+  },
+  "popupFeedback": {
+    "message": "Feedback"
+  },
+  "popupSupport": {
+    "message": "Support"
+  },
+  "watchAdd": { "message": "＋ Watch" },
+  "watchAdded": { "message": "✓ Watching" },
+  "watchFull": { "message": "Max 20" },
+  "watchFail": { "message": "Save failed" },
+  "watchListTitle": { "message": "Watchlist" },
+  "watchEmpty": { "message": "No addresses yet. Open any contract card on X and hit “＋ Watch”." },
+  "watchRemove": { "message": "Remove" },
+  "proTitle": { "message": "Email alerts (Pro)" },
+  "proEmailPlaceholder": { "message": "Email for alerts" },
+  "proEndpointPlaceholder": { "message": "Worker URL, e.g. https://xxx.workers.dev" },
+  "proEnable": { "message": "Enable email alerts for watchlist" },
+  "proNote": { "message": "Addresses are sent only to the Cloudflare Worker you deploy yourself. The free extension uploads nothing." },
+  "proBadEmail": { "message": "Invalid email" },
+  "proBadEndpoint": { "message": "Worker URL must start with https://" },
+  "proEmpty": { "message": "Watchlist is empty — add an address from a card first" },
+  "proWorking": { "message": "Submitting…" },
+  "proOk": { "message": "Alerts enabled" },
+  "proFail": { "message": "Failed: $1" },
+  "popupOpenDex": {
+    "message": "Open on DexScreener →"
+  }
+}
