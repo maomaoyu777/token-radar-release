@@ -2,7 +2,9 @@
 > 隐私政策：https://maomaoyu777.github.io/token-radar-release/privacy.html
 > 落地页：https://maomaoyu777.github.io/token-radar-release/
 
-# Web3 Token Radar v1.3.0（修复版）
+# Web3 Token Radar
+
+**中文说明 → [README.zh-CN.md](README.zh-CN.md)** v1.3.0（修复版）
 
 > 这份代码是在 Antigravity 产出的 v1.2.0 基础上**重写的修复版**：原版在真实 Chrome 里能跑，但存在几处会直接导致“数据错、风险提示错”的缺陷（见文末“修复对照表”）。
 
