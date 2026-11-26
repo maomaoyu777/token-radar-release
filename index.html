@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Web3 Token Radar — DEX price & honeypot risk on X</title>
+<meta name="description" content="A Chrome extension that highlights crypto contract addresses on X and shows live DEX price, liquidity depth and honeypot risk. No login, no tracking, zero special permissions." />
+<meta property="og:title" content="Web3 Token Radar" />
+<meta property="og:description" content="See pool depth and honeypot risk on any contract in a post — without leaving X." />
+<meta property="og:image" content="img/store-1-inline-en.png" />
+<link rel="icon" href="img/icon128.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./"><img src="img/icon128.png" alt="" /> Token <span>Radar</span></a>
+    <nav class="links">
+      <a href="#how" data-i18n="navHow">How it works</a>
+      <a href="#install" data-i18n="navInstall">Install</a>
+      <a href="privacy.html" data-i18n="navPrivacy">Privacy</a>
+      <button class="lang-btn" id="langBtn" type="button">中文</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1 data-i18n="heroTitle">See the <em>pool depth</em> and <em>honeypot risk</em> before you ape.</h1>
+      <p class="lead" data-i18n="heroLead">Token Radar lives inside X. Every EVM or Solana contract address in a post gets a quiet highlight — click it and a card opens with live price, liquidity, 24h volume, pool age, sell tax and honeypot status.</p>
+      <div class="chips">
+        <span class="chip" data-i18n="chipChains">EVM + Solana</span>
+        <span class="chip ok" data-i18n="chipNoTracking">no tracking</span>
+        <span class="chip ok" data-i18n="chipPerms">0 special permissions</span>
+        <span class="chip" data-i18n="chipDeepest">deepest pool picked</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#install" data-i18n="ctaInstall">Add to Chrome</a>
+        <a class="btn ghost" href="privacy.html" data-i18n="ctaPrivacy">Read the privacy policy</a>
+      </div>
+    </div>
+    <div class="shot"><img src="img/store-1-inline-en.png" alt="Token Radar card open over an X timeline" /></div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <h2 data-i18n="howTitle">Three things most scanners get wrong</h2>
+      <p class="sub" data-i18n="howSub">They are exactly the three things that decide whether your money survives.</p>
+      <div class="grid">
+        <div class="card">
+          <h3 data-i18n="card1Title">Deepest pool, not the first one</h3>
+          <p data-i18n="card1Body">A token can have 30 pairs. The shallow one says "high risk", the deep one says "fine" — and naive lookups return the shallow one. Token Radar sorts by liquidity.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="card2Title">Risk in the same card</h3>
+          <p data-i18n="card2Body">Honeypot simulation and buy/sell tax come back with the price. No second tab, no copying the address into a checker.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="card3Title">Nothing to sign up for</h3>
+          <p data-i18n="card3Body">No account, no wallet connection, no analytics. Two public read-only APIs and zero Chrome permissions beyond the sites it reads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <h2 data-i18n="installTitle">Install in 30 seconds</h2>
+      <p class="sub" data-i18n="installSub">Currently distributed as an unpacked extension (Chrome Web Store listing in progress).</p>
+      <ol class="steps">
+        <li data-i18n="step1">Download and unzip the extension package.</li>
+        <li data-i18n="step2">Open <code>chrome://extensions/</code> and switch on <strong>Developer mode</strong> (top right).</li>
+        <li data-i18n="step3">Click <strong>Load unpacked</strong> and pick the unzipped folder.</li>
+        <li data-i18n="step4">Open x.com — contract addresses in posts are now highlighted in blue.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="footerNote">Not financial advice. Contract data comes from public APIs and can be wrong or stale — always verify before trading.</span>
+    <span style="margin-left:auto"><a href="privacy.html" data-i18n="navPrivacy">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+  // 极简双语切换：英文写死，中文文案放字典里，按钮切换 data-lang 内容
+  const ZH = {
+    navHow: '怎么用', navInstall: '安装', navPrivacy: '隐私政策',
+    heroTitle: '先看<em>池子深度</em>和<em>貔貅风险</em>，再决定要不要冲。',
+    heroLead: 'Token Radar 常驻在 X 里。推文中的 EVM / Solana 合约地址会被淡淡高亮，点一下就地弹出卡片：实时价格、流动性、24h 交易量、池子年龄、卖出税与貔貅状态。',
+    chipChains: 'EVM + Solana', chipNoTracking: '无埋点', chipPerms: '0 特殊权限', chipDeepest: '自动选最深池子',
+    ctaInstall: '安装到 Chrome', ctaPrivacy: '查看隐私政策',
+    howTitle: '大多数扫描器搞错的三件事', howSub: '而这三点，恰好决定你的钱能不能活着出来。',
+    card1Title: '取最深池子，不是第一条', card1Body: '一个代币可能有 30 个交易对。浅池子显示"高风险"，深池子显示"正常"，而多数工具返回的是浅的那条。Token Radar 按流动性排序取最深。',
+    card2Title: '风控就在同一张卡里', card2Body: '貔貅模拟和买卖税与价格一起返回，不用再开第二个标签页、也不用把地址复制到别的检测站。',
+    card3Title: '没有任何注册项', card3Body: '无账号、无钱包连接、无统计埋点。只调用两个公开只读接口，除读取的站点外不申请任何 Chrome 权限。',
+    installTitle: '30 秒装好', installSub: '目前以「解压加载」方式分发（Chrome 商店审核中）。',
+    step1: '下载并解压扩展包。',
+    step2: '打开 <code>chrome://extensions/</code>，右上角开启<strong>开发者模式</strong>。',
+    step3: '点<strong>加载已解压的扩展程序</strong>，选择刚解压的文件夹。',
+    step4: '打开 x.com —— 推文里的合约地址现在会蓝色高亮，点一下出卡。',
+    footerNote: '不构成投资建议。合约数据来自公开接口，可能滞后或有误，交易前请自行复核。',
+  };
+  const EN = {};
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    EN[el.dataset.i18n] = el.innerHTML;
+  });
+
+  function apply(lang) {
+    const map = lang === 'zh' ? ZH : EN;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.dataset.i18n;
+      if (map[key]) el.innerHTML = map[key];
+    });
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('langBtn').textContent = lang === 'zh' ? 'English' : '中文';
+    try { localStorage.setItem('w3r-lang', lang); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('w3r-lang'); } catch (e) {}
+  const qs = new URLSearchParams(location.search).get('lang');
+  const initial = qs || saved || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+  if (initial === 'zh') apply('zh');
+
+  document.getElementById('langBtn').addEventListener('click', () => {
+    apply(document.documentElement.lang === 'zh-CN' ? 'en' : 'zh');
+  });
+</script>
+</body>
+</html>
