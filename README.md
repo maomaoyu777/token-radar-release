@@ -1,3 +1,7 @@
+> 下载：https://github.com/maomaoyu777/token-radar-release/releases/latest/download/web3-twitter-radar-v1.3.0.zip
+> 隐私政策：https://maomaoyu777.github.io/token-radar-release/privacy.html
+> 落地页：https://maomaoyu777.github.io/token-radar-release/
+
 # Web3 Token Radar v1.3.0（修复版）
 
 > 这份代码是在 Antigravity 产出的 v1.2.0 基础上**重写的修复版**：原版在真实 Chrome 里能跑，但存在几处会直接导致“数据错、风险提示错”的缺陷（见文末“修复对照表”）。
@@ -192,3 +196,13 @@ Pro 版告警规则：貔貅由否转是、卖出税跳过 15%、卖出税单次
 **收款**：见 [`STRIPE-GUIDE.md`](STRIPE-GUIDE.md)（Gumroad 当天可开、Stripe Payment Link + 手动开通、¥59 验证定价）。
 
 **商品封面**：`dist/store-assets/gumroad-cover-1280x720.png`（由 `screenshots/gumroad-cover.html` 渲染）。
+
+---
+
+## 🛒 源码包（付费）
+
+扩展本身免费。想直接拿这套生产级代码去做自己的产品，可以买完整源码包（$29）：
+https://maomaoyu666777.gumroad.com/l/blmuhx
+
+包含：`content.js` + popup + 监控列表 + 多语言、36 条 jsdom 测试、Chrome 商店提交清单、
+双语隐私页、发布 Kit、图标生成脚本、Cloudflare Worker 提醒后端。
